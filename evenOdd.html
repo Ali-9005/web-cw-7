@@ -9,16 +9,20 @@
   <body>
     <!-- السؤال الأول -->
     <h2 id="numberType"></h2>
-    <script>
-      // 👇🏻 number قم بتعيين قيمة عشوائية إلى المتغير
+    <input type="text" id="evenOddNum" placeholder="Number" />
+    <input type="button" id="check" value="Check" onclick="check()" />
 
-      // 👇🏻 if else باستخدام number قم باختبار قيمة العدد
-      // () استخدم الشرط المناسب بين القوسين
-      if (condition) {
-        document.getElementById("numberType").innerHTML =
-          number + " هو عدد زوجي";
-      } else if (condition) {
-        // هل تستطيع إكمال الكود المطلوب هنا؟
+    <script>
+      function check() {
+        let number = document.getElementById("evenOddNum").value;
+        let condition = number % 2 === 0;
+        if (condition) {
+          document.getElementById("numberType").innerHTML =
+            number + " هو عدد زوجي";
+        } else if (!condition) {
+          document.getElementById("numberType").innerHTML =
+            number + " هو عدد فردي";
+        }
       }
     </script>
   </body>

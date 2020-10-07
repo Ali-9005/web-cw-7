@@ -13,10 +13,17 @@ counter.addEventListener("click", incrementCounter);
 function incrementCounter() {
   // 👇🏻 بواحد مكان النقاط count قم بزيادة قيمة
   // ...
-  counter.innerHTML = count;
+  let count = document.getElementById("counterButton").innerHTML;
+  let newCount = parseInt(count) + 1;
+  counter.innerHTML = newCount;
   // "تسوي 1 اطبع "جيد count إن كانت قيمة العداد أو
-  if (condition) {
+  if (newCount === 1) {
     document.getElementById("status").innerHTML = "جيد";
+  } else if (newCount > 1 && newCount < 6) {
+    document.getElementById("status").innerHTML = "جيد جدًا";
+  } else if (newCount >= 6) {
+    document.getElementById("status").innerHTML = "رائع";
+
   }
   // "أكبر من 1 وأقل من 6 اطبع "جيد جداً count إن كانت قيمة العداد أو
   // "أكبر من أو تساوي 6 اطبع "رائع count إن كانت قيمة العداد أو
